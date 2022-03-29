@@ -1,4 +1,10 @@
-.nav-item{
+.Navbar a {
     padding-left: 3rem;
     text-align: right;
+       color: white;
+}
+
+.Navbar .navbar-toggler .navbar-toggler-icon{
+    color: white;
+    background-color: azure;
 }
