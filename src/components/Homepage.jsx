@@ -3,6 +3,9 @@ import millify from "millify";
 import { Typography,  Statistic } from "antd";
 import { Link } from "react-router-dom";
 import { useGetCryptosQuery } from "../services/CryptoApi";
+import '../styles/homepage.css'
+import {Cryptocurrencies, News} from '../components'
+
 
 const { Title } = Typography;
 
@@ -12,7 +15,7 @@ const Homepage = () => {
 
   if (isFetching) return "loading..";
   return (
-    <div className="container">
+    <div className="container Homepage">
       <Title level={2} className="heading" style={{ textAlign: "center" }}>
         Global Crypto Stats
       </Title>
@@ -47,13 +50,20 @@ const Homepage = () => {
         </div>
       </div>
 
-      <div className="home-heading-container">
-        <Title style={{ textAlign: "center" }} level={2}>
-          Top 10 Cryptocurrencies in the world
-        </Title>
+      <div className="titles">
+        <h2>Top 10 Cryptocurrencies in the world</h2>
 
         <Link to="/cryptocurrencies">Show more</Link>
       </div>
+      <hr />
+      <Cryptocurrencies  simplified/>
+      <div className="titles">
+        <h2>Latest Crypto News</h2>
+
+        <Link to="/news">Show more</Link>
+      </div>
+      <hr />
+      <News simplified />
     </div>
   );
 };

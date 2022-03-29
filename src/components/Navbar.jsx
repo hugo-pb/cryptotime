@@ -1,7 +1,5 @@
 import React from "react";
-import { Avatar, Typography } from "antd";
-import { Link } from "react-router-dom";
-import { MoneyCollectOutlined, BulbOutlined } from "@ant-design/icons";
+
 import Icon from "../images/cryptocurrency.png";
 import "../styles/Navbar.css";
 const Navbar = () => {
