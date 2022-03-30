@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 import Icon from "../images/cryptocurrency.png";
 import "../styles/Navbar.css";
 const Navbar = () => {
@@ -54,17 +54,16 @@ const Navbar = () => {
     </nav> */}
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
-          <a class="navbar-brand" href="./">
+          <Link className="navbar-brand" to="./">
             <img
               src={Icon}
               alt="icon"
               width="30"
-              heigh
-                          className="d-inline-block align-text-top"
-                          style={{marginRight:'1rem'}}
+              className="d-inline-block align-text-top"
+              style={{ marginRight: "1rem" }}
             />
-         CryptoTime
-          </a>
+            CryptoTime
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
@@ -78,21 +77,21 @@ const Navbar = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <a classNameName="nav-link" href="./">
+              <Link className="nav-link" to="./">
                 Home
-              </a>
+              </Link>
 
-              <a classNameName="nav-link" href="/cryptocurrencies">
+              <Link className="nav-link" to="/cryptocurrencies">
                 Cryptocurrencies
-              </a>
+              </Link>
 
-              <a classNameName="nav-link" href="/exchanges">
+              <Link className="nav-link" to="/exchanges">
                 Exchanges
-              </a>
+              </Link>
 
-              <a classNameName="nav-link" href="/news">
+              <Link className="nav-link" to="/news">
                 News
-              </a>
+              </Link>
             </div>
           </div>
         </div>

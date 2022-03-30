@@ -10,10 +10,15 @@ import {Cryptocurrencies, News} from '../components'
 const { Title } = Typography;
 
 const Homepage = () => {
-  const { data, isFetching } = useGetCryptosQuery();
+  const { data, isFetching } = useGetCryptosQuery(5);
   const globalStats = data?.data?.stats;
 
-  if (isFetching) return "loading..";
+  if (isFetching)
+    return (
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    );
   return (
     <div className="container Homepage">
       <Title level={2} className="heading" style={{ textAlign: "center" }}>
@@ -51,7 +56,7 @@ const Homepage = () => {
       </div>
 
       <div className="titles">
-        <h2>Top 10 Cryptocurrencies in the world</h2>
+        <h2>Top 5 Cryptocurrencies in the world</h2>
 
         <Link to="/cryptocurrencies">Show more</Link>
       </div>
