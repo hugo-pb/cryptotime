@@ -1,7 +1,7 @@
 import React from "react";
 import moment from "moment";
 import { useGetCryptoNewsQuery } from "../services/CryptoNewsApi";
-
+import'../styles/news.css'
 const News = ({ simplified }) => {
   const { data: cryptoNews } = useGetCryptoNewsQuery({
     newsCategory: "cryptocurrency",
@@ -19,15 +19,27 @@ const News = ({ simplified }) => {
     <div className="container ">
       <div className="row">
         {cryptoNews.value.map((news, key) => (
-          <div className="col-md-4 col-lg-2" key={key}>
+          <div className="col-md-6 col-lg-4" key={key}>
             {" "}
-            <div className="card">
+            <div
+              className="card"
+              style={{
+                marginTop: "3px",
+                minHeight: "21rem",
+                maxHeight: "30rem",
+                display: "flex",
+                alignContent: "center",
+                justifyContent: "baseline",
+              }}
+            >
               <div className="card-body">
-                <a href={news.url} targe="_blank" rel="noreferrer">
+                <a href={news.url} target="_blank" rel="noreferrer">
                   <h5 className="card-title">{news.name}</h5>
+                  <img src={news?.image?.thumbnail?.contentUrl} alt="news" />
+                  <p className="card-text" style={{
+                    marginTop: '2rem',
+                  color:'black'}}>{news.description}</p>
                 </a>
-
-                <p className="card-text"></p>
               </div>
             </div>
           </div>
