@@ -8,7 +8,7 @@ const Cryptocurrencies = ({ simplified }) => {
   const count = simplified ? 5 : 100;
   const { data: cryptosList, isFetching } = useGetCryptosQuery(count);
   const [cryptos, setCryptos] = useState([]);
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     const filteredData = cryptosList?.data?.coins.filter((coin) =>
@@ -17,9 +17,12 @@ const Cryptocurrencies = ({ simplified }) => {
     setCryptos(filteredData);
   }, [cryptosList, search]);
 
-  if (isFetching) return(<div class="spinner-border" role="status">
-  <span class="visually-hidden">Loading...</span>
-</div>);
+  if (isFetching)
+    return (
+      <div className="spinner-border" role="status">
+        <span className="visually-hidden">Loading...</span>
+      </div>
+    );
   return (
     <div className="container">
       {!simplified && (
@@ -42,12 +45,12 @@ const Cryptocurrencies = ({ simplified }) => {
                   className="card-img-top"
                   alt="crypto"
                 ></img>{" "}
-                <h5 class="card-title">{`${currency.rank}. ${currency.name}`}</h5>
-                <p class="card-text">Price :{millify(currency.price)}</p>
-                <p class="card-text">
+                <h5 className="card-title">{`${currency.rank}. ${currency.name}`}</h5>
+                <p className="card-text">Price :{millify(currency.price)}</p>
+                <p className="card-text">
                   Market Cap :{millify(currency.marketCap)}
                 </p>
-                <p class="card-text">
+                <p className="card-text">
                   Daily Change :{millify(currency.change)}
                 </p>
               </div>
