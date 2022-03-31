@@ -5,7 +5,7 @@ import'../styles/news.css'
 const News = ({ simplified }) => {
   const { data: cryptoNews } = useGetCryptoNewsQuery({
     newsCategory: "cryptocurrency",
-    count: simplified ? 6 : 12,
+    count: simplified ? 6 : 15,
   });
 
   if (!cryptoNews?.value) {
@@ -36,9 +36,20 @@ const News = ({ simplified }) => {
                 <a href={news.url} target="_blank" rel="noreferrer">
                   <h5 className="card-title">{news.name}</h5>
                   <img src={news?.image?.thumbnail?.contentUrl} alt="news" />
-                  <p className="card-text" style={{
-                    marginTop: '2rem',
-                  color:'black'}}>{news.description}</p>
+                  <p className="card-text" style={{}}>
+                    {news.description}
+                  </p>
+
+                  <img
+                    src={news.provider[0]?.image?.thumbnail?.contentUrl}
+                    alt="news provider"
+                    className="logo"
+                  />
+                  <p>
+                    <small>
+                      {moment(news.datePublished).startOf("ss").fromNow()}
+                    </small>
+                  </p>
                 </a>
               </div>
             </div>

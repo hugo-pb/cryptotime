@@ -3,3 +3,10 @@
   border: #000000 solid 1px;
   background:#fff;
 }
+.logo{
+border-radius: 50%;
+height: 3rem;
+}
+p { margin-top: 2rem;
+     color: black;
+    }
