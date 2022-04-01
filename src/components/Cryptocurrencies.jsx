@@ -40,12 +40,14 @@ const Cryptocurrencies = ({ simplified }) => {
           <div className="col-md-4 col-lg-2" key={currency.id}>
             <div className="card">
               <div className="card-body">
-                <img
-                  src={currency.iconUrl}
-                  className="card-img-top"
-                  alt="crypto"
-                ></img>{" "}
-                <h5 className="card-title">{`${currency.rank}. ${currency.name}`}</h5>
+                <Link to="/cryptoDetails">
+                  <img
+                    src={currency.iconUrl}
+                    className="card-img-top"
+                    alt="crypto"
+                  ></img>{" "}
+                  <h5 className="card-title">{`${currency.rank}. ${currency.name}`}</h5>
+                </Link>
                 <p className="card-text">Price :{millify(currency.price)}</p>
                 <p className="card-text">
                   Market Cap :{millify(currency.marketCap)}
