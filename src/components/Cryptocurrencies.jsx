@@ -37,26 +37,26 @@ const Cryptocurrencies = ({ simplified }) => {
 
       <div className="row">
         {cryptos?.map((currency) => (
-          <div className="col-md-4 col-lg-2" key={currency.id}>
-            <div className="card">
-              <div className="card-body">
-                <Link to="/cryptoDetails">
+          <div className="col-md-4 col-lg-2" key={currency.uuid}>
+            <Link to={`/crypto/${currency.uuid}`}>
+              <div className="card">
+                <div className="card-body">
                   <img
                     src={currency.iconUrl}
                     className="card-img-top"
                     alt="crypto"
                   ></img>{" "}
                   <h5 className="card-title">{`${currency.rank}. ${currency.name}`}</h5>
-                </Link>
-                <p className="card-text">Price :{millify(currency.price)}</p>
-                <p className="card-text">
-                  Market Cap :{millify(currency.marketCap)}
-                </p>
-                <p className="card-text">
-                  Daily Change :{millify(currency.change)}
-                </p>
+                  <p className="card-text">Price :{millify(currency.price)}</p>
+                  <p className="card-text">
+                    Market Cap :{millify(currency.marketCap)}
+                  </p>
+                  <p className="card-text">
+                    Daily Change :{millify(currency.change)}
+                  </p>
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         ))}
       </div>
