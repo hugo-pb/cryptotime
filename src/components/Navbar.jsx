@@ -31,7 +31,7 @@ const Navbar = () => {
           </button>
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-              <Link className="nav-link" to="./">
+              <Link className="nav-link" to="../">
                 Home
               </Link>
 
@@ -39,9 +39,6 @@ const Navbar = () => {
                 Cryptocurrencies
               </Link>
 
-              <Link className="nav-link" to="/exchanges">
-                Exchanges
-              </Link>
 
               <Link className="nav-link" to="/news">
                 News
