@@ -8,7 +8,7 @@ const Navbar = () => {
      
       <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="./">
+          <Link className="navbar-brand" to="../">
             <img
               src={Icon}
               alt="icon"
